@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import pygame
-from pygame.locals import *
+from pygame.locals import MOUSEBUTTONDOWN, Rect, QUIT
 import sys
 
 
@@ -24,7 +24,7 @@ def rule(cells):
                 if cells[y + d[1]][x + d[0]] == 1:
                     c += 1
             if cells[y][x] == 0:
-                if gen % 17 == 0:           # 17世代毎に増殖ルールを緩くする
+                if gen % 17 == 0:           # 世代数が17の倍数の時に増殖ルールを緩くする
                     if c >= 2:
                         tcells[y][x] = 1
                 else:
