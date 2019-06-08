@@ -23,8 +23,13 @@ def rule(cells):
             for d in dir:    # 生きている隣接セルの個数を数える
                 if cells[y + d[1]][x + d[0]] == 1:
                     c += 1
-            if cells[y][x] == 0 and c == 3:    # ルール１を適用
-                tcells[y][x] = 1
+            if cells[y][x] == 0:
+                if gen % 17 == 0:           # 17世代毎に増殖ルールを緩くする
+                    if c >= 2:
+                        tcells[y][x] = 1
+                else:
+                    if c == 3:    # ルール１を適用
+                        tcells[y][x] = 1
             if cells[y][x] == 1:
                 if c == 2 or c == 3:    # ルール２を適用
                     tcells[y][x] = 1
