@@ -156,5 +156,5 @@ while True:
             rule_on = 1 - rule_on   # フラグの切り替え
         if e.type == QUIT:
             pygame.quit()
-            sys.exit
+            sys.exit()
     pygame.display.update()
