@@ -76,5 +76,5 @@ while True:
             agent_list.append(a)
         if e.type == QUIT:
             pygame.quit()
-            sys.exit
+            sys.exit()
     pygame.display.update()
